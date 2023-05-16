@@ -20,7 +20,6 @@ public:
 	float getY();
 
 	float getZ();
-
 };
 
 

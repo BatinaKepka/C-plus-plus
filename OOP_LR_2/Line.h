@@ -1,15 +1,24 @@
 #pragma once
 #include "Point.h"
-typedef struct
+
+class Line
 {
+private:
 	Point first, second;
+public:
+	Line();
 
-}Line;
+	Line(Point first, Point second);
 
-void LineInit(Line* line, Point first, Point second);
+	void Input();
 
-void LineInput(Line* line);
+	void Display();
 
-void LineDisplay(Line line);
+	bool Point_on_line(Point point);
 
-bool Point_on_line(Line line, Point point);
+	Point Get_first_point();
+
+	Point Get_second_point();
+
+};
+
