@@ -1,25 +1,55 @@
 #include "Point.h"
 #include <math.h>
 #include <iostream>
+using namespace std;
 
-void PointInit(Point* point, float x, float y, float z)
+Point::Point()
 {
-	point->x = x;
-	point->y = y;
-	point->z = z;
-
+	x = 0;
+	y = 0;
+	z = 0;
 }
-void PointInput(Point* point)
+
+Point::Point(float x, float y, float z)
+{
+	this->x = x;
+	this->y = y;
+	this->z = z;
+}
+
+void Point::Input()
 {
 	float x, y, z;
-	scanf_s("%f%f%f", &x, &y, &z);
-	PointInit(point, x, y, z);
+
+	cin >> x >> y >> z;
+
+	this->x = x;
+	this->y = y;
+	this->z = z;
+
 }
-void PointDisplay(Point point)
+
+void Point::Display()
 {
-	printf("x = %f y = %f z =%f\n", point.x, point.y, point.z);
+	cout << "x = " << this->x << " y = " << this->y <<" z = " << this->z;
 }
-float Distance_to_point(Point first_piont, Point second_point)
+
+float Point::Distance_to_Point(Point end)
 {
-	return sqrt(pow((second_point.x - first_piont.x), 2) + pow((second_point.y - first_piont.y), 2) + pow((second_point.z - first_piont.z), 2));
+	return sqrt(pow((end.x - this->x), 2) + pow((end.y - this->y), 2) + pow((end.z - this->z), 2));
+}
+
+float Point::getX()
+{
+	return this->x;
+}
+
+float Point::getY()
+{
+	return this->y;
+}
+
+float Point::getZ()
+{
+	return this->z;
 }
