@@ -1,38 +1,60 @@
 #include "Triangle.h"
 #include <iostream>
+using namespace std;
 
-void TriangleInit(Triangle* triangle, Point first, Point second, Point third)
+Triangle::Triangle()
 {
-	PointInit(&triangle->first, first.x, first.y, first.z);
-	PointInit(&triangle->second, second.x, second.y, second.z);
-	PointInit(&triangle->third, third.x, third.y, third.z);	
+
 }
-void TriangleInput(Triangle* triangle)
+
+Triangle::Triangle(Point first, Point second, Point third)
 {
-	Point first, second, third;
-	printf("");
-	PointInput(&first);
-	printf("");
-	PointInput(&second);
-	printf("");
-	PointInput(&third);
-	TriangleInit(triangle, first, second, third);
+	this->first = first;
+	this->second = second;
+	this->third = third;
 }
-void TriangleDisplay(Triangle triangle)
+
+void Triangle::Input()
 {
-	PointDisplay(triangle.first);
-	PointDisplay(triangle.second);
-	PointDisplay(triangle.third);
+	first.Input();
+	second.Input();
+	third.Input();
 }
-float TrianglePerimeter(Triangle triangle)
+
+void Triangle::Display()
 {
-	return Distance_to_point(triangle.first, triangle.second) + Distance_to_point(triangle.first, triangle.third) + Distance_to_point(triangle.third, triangle.second);
+	first.Display();
+	second.Display();
+	third.Display();
 }
-float TriangleArea(Triangle triangle)
+
+float Triangle::Perimeter()
 {
-	float a = Distance_to_point(triangle.first, triangle.second);
-	float b = Distance_to_point(triangle.first, triangle.third);
-	float c = Distance_to_point(triangle.third, triangle.second);
+	return first.Distance_to_Point(second) + first.Distance_to_Point(third) + second.Distance_to_Point(third);
+}
+
+float Triangle::Area()
+{
+	float a = first.Distance_to_Point(second);
+	float b = first.Distance_to_Point(third);
+	float c = second.Distance_to_Point(third);
 	float p = (a + b + c) / 2;
 	return sqrt(p * (p - a) * (p - b) * (p - c));
 }
+
+Point Triangle::Get_first_point()
+{
+	return first;
+}
+Point Triangle::Get_second_point()
+{
+	return second;
+}
+Point Triangle::Get_third_point()
+{
+	return third;
+}
+
+
+
+
