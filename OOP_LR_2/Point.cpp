@@ -20,8 +20,12 @@ Point::Point(float x, float y, float z)
 void Point::Input()
 {
 	float x, y, z;
-
-	cin >> x >> y >> z;
+	cout << "x = ";
+	cin >> x;
+	cout << "y = ";
+	cin >> y;
+	cout << "z = ";
+	cin >> z;
 
 	this->x = x;
 	this->y = y;
@@ -31,7 +35,7 @@ void Point::Input()
 
 void Point::Display()
 {
-	cout << "x = " << this->x << " y = " << this->y <<" z = " << this->z;
+	cout << endl << "x = " << this->x << " y = " << this->y <<" z = " << this->z;
 }
 
 float Point::Distance_to_Point(Point end)

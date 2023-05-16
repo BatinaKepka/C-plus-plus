@@ -22,7 +22,9 @@ void Line::Input()
 
 void Line::Display()
 {
+	cout << endl << "Первая точка:";
 	this->first.Display();
+	cout << endl << "Вторая точка:";
 	this->second.Display();
 }
 

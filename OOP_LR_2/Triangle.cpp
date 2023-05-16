@@ -23,8 +23,11 @@ void Triangle::Input()
 
 void Triangle::Display()
 {
+	cout << endl << "Первая точка:";
 	first.Display();
+	cout << endl << "Вторая точка:";
 	second.Display();
+	cout << endl << "Третья точка:";
 	third.Display();
 }
 

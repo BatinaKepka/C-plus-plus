@@ -1,5 +1,6 @@
 #include "Plane.h"
 #include <iostream>
+using namespace std;
 
 Plane::Plane() 
 {
@@ -13,17 +14,20 @@ Plane::Plane(Point first, Point second, Point third)
 	this->third = third;
 }
 
-void Plane::PlaneInput()
+void Plane::Input()
 {
 	first.Input();
 	second.Input();
 	third.Input();
 }
 
-void Plane::PlaneDisplay()
+void Plane::Display()
 {
+	cout << endl << "Первая точка:";
 	first.Display();
+	cout << endl << "Первая точка:";
 	second.Display();
+	cout << endl << "Первая точка:";
 	third.Display();
 }
 

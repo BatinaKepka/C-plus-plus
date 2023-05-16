@@ -11,9 +11,9 @@ public:
 
 	Plane(Point first, Point second, Point third);
 
-	void PlaneInput();
+	void Input();
 
-	void PlaneDisplay();
+	void Display();
 
 	bool Point_on_plane(Point point);
 

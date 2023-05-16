@@ -22,8 +22,9 @@ void Sphere::Input()
 
 void Sphere::Display()
 {
+	cout << endl << "Центр сферы:";
 	centre.Display();
-	printf("R = %f", radius);
+	cout << endl << "Радиус сферы:" << radius;	
 }
 
 bool Sphere::Point_on_Sphere(Point point)
