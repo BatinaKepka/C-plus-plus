@@ -1,15 +1,28 @@
 #pragma once
 #include "Point.h"
-typedef struct
+
+class Plane
 {
+private:
 	Point first, second, third;
+public:
 
-}Plane;
+	Plane();
 
-void PlaneInit(Plane* plane, Point first, Point second, Point third);
+	Plane(Point first, Point second, Point third);
 
-void PlaneInput(Plane* plane);
+	void PlaneInput();
 
-void PlaneDisplay(Plane plane);
+	void PlaneDisplay();
 
-bool Point_on_plane(Plane plane, Point point);
+	bool Point_on_plane(Point point);
+
+	Point Get_first_point();
+
+	Point Get_second_point();
+
+	Point Get_third_point();
+};
+
+
+
