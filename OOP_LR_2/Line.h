@@ -5,6 +5,7 @@ class Line
 {
 private:
 	Point first, second;
+	static int Count;
 public:
 	Line();
 
@@ -20,5 +21,10 @@ public:
 
 	Point Get_second_point();
 
+	static int getCount()
+	{
+		return Count;
+	}
+	~Line();
 };
 

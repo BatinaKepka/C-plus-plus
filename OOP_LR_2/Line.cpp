@@ -4,13 +4,14 @@ using namespace std;
 
 Line::Line()
 {
-
+	Count++;
 }
 
 Line::Line(Point first, Point second)
 {
 	this->first = first;
 	this->second = second;
+	Count++;
 }
 
 void Line::Input() 
@@ -53,6 +54,11 @@ Point Line::Get_first_point()
 Point Line::Get_second_point()
 {
 	return this->second;
+}
+Line::~Line()
+{
+	Count--;
+	cout << "\nЛиния удалена!";
 }
 
 

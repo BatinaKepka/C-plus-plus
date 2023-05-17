@@ -7,14 +7,14 @@ Point::Point()
 {
 	x = 0;
 	y = 0;
-	z = 0;
+	z = 0;	
 }
 
 Point::Point(float x, float y, float z)
 {
 	this->x = x;
 	this->y = y;
-	this->z = z;
+	this->z = z;	
 }
 
 void Point::Input()
@@ -57,3 +57,4 @@ float Point::getZ()
 {
 	return this->z;
 }
+

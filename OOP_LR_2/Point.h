@@ -2,7 +2,7 @@
 class Point
 {
 private:
-	float x, y, z;
+	float x, y, z;		
 
 public:
 	Point();
@@ -19,8 +19,11 @@ public:
 
 	float getY();
 
-	float getZ();
+	float getZ();	
+	
 };
+
+
 
 
 
