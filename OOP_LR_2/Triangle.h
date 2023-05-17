@@ -1,16 +1,28 @@
 #pragma once
 #include "Point.h"
-typedef struct
+
+class Triangle
 {
+private:
 	Point first, second, third;
-}Triangle;
+public:
 
-void TriangleInit(Triangle* triangle, Point first, Point second, Point third);
+	Triangle();
 
-void TriangleInput(Triangle* triangle);
+	Triangle(Point first, Point second, Point third);
 
-void TriangleDisplay(Triangle triangle);
+	void Input();
 
-float TrianglePerimeter(Triangle triangle);
+	void Display();
 
-float TriangleArea(Triangle triangle);
+	float Perimeter();
+
+	float Area();
+
+	Point Get_first_point();
+
+	Point Get_second_point();
+
+	Point Get_third_point();
+};
+

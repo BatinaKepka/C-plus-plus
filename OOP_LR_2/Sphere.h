@@ -1,17 +1,25 @@
 #pragma once
 #include "Point.h"
 
-typedef struct
+class Sphere
 {
+private:
 	Point centre;
 	float radius;
+public:
+	Sphere();
 
-}Sphere;
+	Sphere(Point centre, float radius);
 
-void SphereInit(Sphere* sphere, Point centre, float radius);
+	void Input();
 
-void SphereInput(Sphere* sphere);
+	void Display();
 
-void SphereDisplay(Sphere sphere);
+	bool Point_on_Sphere(Point point);
 
-bool Point_on_Sphere(Sphere sphere, Point point);
+	Point GetCentre();
+
+	float GetRadius();
+};
+
+

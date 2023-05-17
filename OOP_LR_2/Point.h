@@ -1,19 +1,27 @@
 #pragma once
-typedef struct
+class Point
 {
+private:
+	float x, y, z;
 
-	float x;
-	float y;
-	float z;
+public:
+	Point();
 
-} Point;
+	Point(float x, float y, float z);
 
-void PointInit(Point* point, float x, float y,float z);
+	void Input();
 
-void PointInput(Point* point);
+	void Display();
 
-void PointDisplay(Point point);
+	float Distance_to_Point(Point end);
 
-float Distance_to_point(Point first_piont, Point second_point);
+	float getX();
+
+	float getY();
+
+	float getZ();
+};
+
+
 
 

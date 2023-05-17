@@ -5,86 +5,78 @@
 #include "Triangle.h"
 #include "Plane.h"
 #include "Sphere.h"
+using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "Rus");
-    
-    Point A;
-    Point* B = (Point*)malloc(sizeof(Point));
-    printf("\nВведите кординты точки А: \n");
-    PointInput(&A);
-    printf("\nВведите кординты точки B: \n");
-    PointInput(B);
-    printf("\nКординаты точки A: \n");
-    PointDisplay(A);
-    printf("\nКординаты точки B: \n");
-    PointDisplay(*B);
-    printf("\nРасстояние между точками A и B: %f", Distance_to_point(A, *B));
-    free(B);    
+    setlocale(LC_ALL, "Rus"); 
+
+    Point A(1, 2, 3), B;
+    cout  << "Введите координаты точки:" << endl;
+    B.Input();
+    A.Display();
+    B.Display();
+    cout << endl << "Расстояние между точками равно:" << A.Distance_to_Point(B);
 
     Line line;
-    printf("\nВведите кординты двух точек прямой: \n");
-    LineInput(&line);
-    printf("\nКординаты точек задающих прямую: \n");
-    LineDisplay(line);
-    Point_on_line(line, A);     
-
-    Line* dynamic_line = (Line*)malloc(sizeof(Line));
-    printf("\nВведите кординты двух точек прямой: \n");
-    LineInput(dynamic_line);
-    printf("\nКординаты точек задающих прямую: \n");
-    LineDisplay(*dynamic_line);
-    Point_on_line(*dynamic_line, A);
-    free(dynamic_line);
+    cout << endl << "Введите координаты двух точек прямой:" << endl;
+    line.Input();
+    line.Display();
+    line.Point_on_line(A);
 
     Triangle triangle;
-    printf("\nВведите кординаты трёх точек - вершин треугольника: \n");
-    TriangleInput(&triangle);
-    printf("\nКординаты вершин треугольника: \n");
-    TriangleDisplay(triangle);
-    printf("\nПериметр треугольника: %f", TrianglePerimeter(triangle));
-    printf("\nПлощадь треугольника: %f", TriangleArea(triangle));
+    cout << endl << "Введите координаты трех вершин треугольника:" << endl;
+    triangle.Input();
+    cout << endl << "Вершины треугольника:";
+    triangle.Display();
+    cout << endl << "Периметр треугольника: " << triangle.Perimeter();
+    cout << endl << "Площадь треугольника: " << triangle.Area();
 
-    Triangle* dynamic_triangle = (Triangle*)malloc(sizeof(Triangle));
-    printf("\nВведите кординаты трёх точек - вершин треугольника: \n");
-    TriangleInput(dynamic_triangle);
-    printf("\nКординаты вершин треугольника: \n");
-    TriangleDisplay(*dynamic_triangle);
-    printf("\nПериметр треугольника: %f", TrianglePerimeter(*dynamic_triangle));
-    printf("\nПлощадь треугольника: %f", TriangleArea(*dynamic_triangle));
-    free(dynamic_triangle);
-
-    Plane plane; 
-    printf("\nВведите кординаты трёх точек задающих плоскость : \n");
-    PlaneInput(&plane);
-    printf("\nКординаты точек задающих плоскость: \n");
-    PlaneDisplay(plane);
-    Point_on_plane(plane, A);
-
-    Plane* dynamic_plane = (Plane*)malloc(sizeof(Plane));
-    printf("\nВведите кординаты трёх точек задающих плоскость : \n");
-    PlaneInput(dynamic_plane);
-    printf("\nКординаты точек задающих плоскость: \n");
-    PlaneDisplay(*dynamic_plane);
-    Point_on_plane(*dynamic_plane, A);
-    free(dynamic_plane);
+    Plane plane;
+    cout << endl << "Введите координаты трёх точек задающих плоскость:" << endl;
+    plane.Input();
+    cout << endl << "Координаты трёх точек задающих плоскость:";
+    plane.Display();
+    plane.Point_on_plane(B);
 
     Sphere sphere;
-    printf("\nВведите центр и радиус сферы: \n");
-    SphereInput(&sphere);
-    printf("\nЦентр сферы и её радиус: \n");
-    SphereDisplay(sphere);
-    Point_on_Sphere(sphere, A);
+    cout << endl << "Введите кординаты центра сферы и её радиус:" << endl;
+    sphere.Input();
+    cout << endl << "Кординаты центра сферы и её радиус:";
+    sphere.Display();
+    sphere.Point_on_Sphere(A);
 
-    Sphere* dynamic_sphere = (Sphere*)malloc(sizeof(Sphere));
-    printf("\nВведите центр и радиус сферы : \n");
-    SphereInput(dynamic_sphere);
-    printf("\nЦентр сферы и её радиус: \n");
-    SphereDisplay(*dynamic_sphere);
-    Point_on_Sphere(*dynamic_sphere, A);
-    free(dynamic_sphere);
+    int n;    
+    cout << endl <<"Введите размер массива: ";
+    cin >> n;
+    Point* array_of_points = new Point[n];
+    for (int i = 0; i < n; i++) {
+        cout << "\nВедите координаты  " << i + 1 << " точки: \n";
+        array_of_points[i].Input();      
+    }
 
+    cout << "Точки из нашего массива:";
+    for (int i = 0; i < n; i++) {
+        cout << endl;
+        array_of_points[i].Display();
+    }
+    delete[] array_of_points;
+
+    Line* array_of_line[3];
+    cout << "\nВведите массив прямых\n";
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Прямая - " << i + 1 << endl;
+        array_of_line[i] = new Line;
+        array_of_line[i]->Input();
+    }
+    cout << "\nНаш массив прямых\n";
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Прямая - " << i + 1 << endl;
+        array_of_line[i]->Display();
+        delete array_of_line[i];
+    }
 }
 
 
