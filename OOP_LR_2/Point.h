@@ -21,6 +21,8 @@ public:
 
 	float getZ();	
 
+	bool More_distant(Point second);
+
 	friend void ValuePointX2(Point& point);
 	
 };

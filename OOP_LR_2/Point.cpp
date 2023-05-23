@@ -43,6 +43,19 @@ float Point::Distance_to_Point(Point end)
 	return sqrt(pow((end.x - this->x), 2) + pow((end.y - this->y), 2) + pow((end.z - this->z), 2));
 }
 
+bool Point::More_distant(Point second)
+{
+	Point zero(0, 0, 0);
+	if (this->Distance_to_Point(zero) > second.Distance_to_Point(zero))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 float Point::getX()
 {
 	return this->x;
