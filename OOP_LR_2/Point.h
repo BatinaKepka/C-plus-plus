@@ -2,7 +2,7 @@
 class Point
 {
 private:
-	float x, y, z;		
+	float x, y, z;	
 
 public:
 	Point();
@@ -24,7 +24,12 @@ public:
 	bool More_distant(Point second);
 
 	friend void ValuePointX2(Point& point);
-	
+
+	Point operator + (Point b);
+
+	Point& operator ++();
+
+	Point operator ++(int unused);	
 };
 
 

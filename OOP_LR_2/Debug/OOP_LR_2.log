@@ -1,9 +1,2 @@
-﻿  Line.cpp
-  OOP_LR_2.cpp
-  Plane.cpp
-  Point.cpp
-C:\Users\Виктор\source\repos\OOP\OOP_LR_2\OOP_LR_2\Point.cpp(43,13): warning C4244: return: преобразование "double" в "float", возможна потеря данных
-  Sphere.cpp
-  Triangle.cpp
-  Создание кода...
+﻿  OOP_LR_2.cpp
   OOP_LR_2.vcxproj -> C:\Users\Виктор\source\repos\OOP\OOP_LR_2\Debug\OOP_LR_2.exe

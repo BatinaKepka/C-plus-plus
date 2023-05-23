@@ -71,3 +71,28 @@ float Point::getZ()
 	return this->z;
 }
 
+Point Point::operator + (Point b)
+{
+	Point c;
+	c.x = this->x + b.x;
+	c.y = this->y + b.y;
+	c.z = this->z + b.z;
+	return c;
+}
+
+Point& Point::operator ++()
+{
+	this->x++;
+	this->y++;
+	this->z++;
+	return *this;
+}
+
+Point Point::operator ++(int unused)
+{
+	Point temp = *this;
+	++*this;	
+	return temp;
+}
+
+
