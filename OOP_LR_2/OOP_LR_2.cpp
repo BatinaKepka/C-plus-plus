@@ -23,10 +23,22 @@ int main()
     cout << "Введите точки третьей прямой:\n";
     Line* C = new Line();
     C->Input();
-    cout << "\nСейчас существует " << Line::getCount() << " объектов класс Line";
+    cout << "Сейчас существует " << Line::getCount() << " объектов класс Line";
     delete B;
     delete C;
     cout << "\nСейчас существует " << Line::getCount() << " объектов класс Line";
+
+
+    Triangle x;
+    cout << "\nВведите три вержины треугольника: \n";
+    x.Input();
+    float perimetr1;
+    float* perimetr2 = new float;
+    x.Perimeter(perimetr1);
+    x.Perimeter(perimetr2);
+    cout << "\nПериметр треугольника (значение через ссылку): " << perimetr1;
+    cout << "\nПериметр треугольника (значение через указатель): " << *perimetr2;
+    
 }
 
 

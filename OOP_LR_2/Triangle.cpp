@@ -35,6 +35,18 @@ float Triangle::Perimeter()
 {
 	return first.Distance_to_Point(second) + first.Distance_to_Point(third) + second.Distance_to_Point(third);
 }
+void Triangle::Perimeter(float* perimeter)
+{
+	*perimeter = first.Distance_to_Point(second) + first.Distance_to_Point(third) + second.Distance_to_Point(third);
+	cout << "\nВызван метод вычесления периметра, возврат значения через указатель!";
+	return;
+}
+void Triangle::Perimeter(float  &perimeter)
+{
+	perimeter = first.Distance_to_Point(second) + first.Distance_to_Point(third) + second.Distance_to_Point(third);
+	cout << "\nВызван метод вычесления периметра, возврат значения через ссылку!";
+	return;
+}
 
 float Triangle::Area()
 {

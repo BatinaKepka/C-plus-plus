@@ -17,6 +17,10 @@ public:
 
 	float Perimeter();
 
+	void Perimeter(float *perimeter);
+
+	void Perimeter(float &perimeter);
+
 	float Area();
 
 	Point Get_first_point();
