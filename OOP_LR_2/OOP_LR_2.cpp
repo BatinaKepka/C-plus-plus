@@ -6,12 +6,21 @@
 #include "Plane.h"
 #include "Sphere.h"
 using namespace std;
+
 int Line::Count = 0;
+
+void ValuePointX2(Point& point)
+{
+    point.x *= 2;
+    point.y *= 2;
+    point.z *= 2;
+}
+
 
 int main()
 {
     setlocale(LC_ALL, "Rus"); 
-    cout << "Введите точки первой прямой:\n";
+    /*cout << "Введите точки первой прямой:\n";
     Line* A = new Line();
     A->Input();
     cout << "Введите точки второй прямой:\n";
@@ -36,8 +45,18 @@ int main()
     float* perimetr2 = new float;
     x.Perimeter(perimetr1);
     x.Perimeter(perimetr2);
+
+    cout << "\nПериметр треугольника (значение через возврат float ): " << x.Perimeter();
     cout << "\nПериметр треугольника (значение через ссылку): " << perimetr1;
     cout << "\nПериметр треугольника (значение через указатель): " << *perimetr2;
+    */
+    Point point1(1, 2, 3);
+    cout << "Координаты точки до применения дружественной функции: ";
+    point1.Display();
+    ValuePointX2(point1);
+    cout << "\nКоординаты точки после применения дружественной функции: ";
+    point1.Display();
+
     
 }
 

@@ -20,6 +20,8 @@ public:
 	float getY();
 
 	float getZ();	
+
+	friend void ValuePointX2(Point& point);
 	
 };
 
