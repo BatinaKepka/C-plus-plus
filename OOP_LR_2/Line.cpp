@@ -31,9 +31,43 @@ void Line::Display()
 
 bool Line::Point_on_line(Point point)
 {
-	float x = (point.getX() - this->first.getX()) / (this->first.getX() - this->second.getX());
-	float y = (point.getY() - this->first.getY()) / (this->first.getY() - this->second.getY());
-	float z = (point.getZ() - this->first.getZ()) / (this->first.getZ() - this->second.getZ());
+	float x, y, z;	
+	try 
+	{
+		if (this->first.getX() == this->second.getX())
+			throw exception("X кординаты точек прямой равны, возникло деление на ноль");
+		x = (point.getX() - this->first.getX()) / (this->first.getX() - this->second.getX());						  
+	}
+	catch (const exception &ex) 
+	{
+		cout << endl << "Возникло исключения:" << ex.what() << endl;
+		x = 0;
+	}
+
+	try
+	{
+		if (this->first.getY() == this->second.getY())
+			throw exception("Y кординаты точек прямой равны, возникло деление на ноль");
+		y = (point.getY() - this->first.getY()) / (this->first.getY() - this->second.getY());
+	}
+	catch (const exception& ex)
+	{
+		cout << endl << "Возникло исключения:" << ex.what() << endl;
+		y = 0;
+	}
+
+	try
+	{
+		if (this->first.getZ() == this->second.getZ())
+			throw exception("Z кординаты точек прямой равны, возникло деление на ноль");
+		z = (point.getZ() - this->first.getZ()) / (this->first.getZ() - this->second.getZ());
+	}
+	catch (const exception& ex)
+	{
+		cout << endl << "Возникло исключения:" << ex.what() << endl;
+		z = 0;
+	}
+
 	if ((x == y) && (y == z))
 	{
 		printf("\nТочка лежит на прямой!");
@@ -44,7 +78,10 @@ bool Line::Point_on_line(Point point)
 		printf("\nТочка не лежит на прямой!");
 		return false;
 	}
+	
 }
+	
+
 
 Point Line::Get_first_point() 
 {
