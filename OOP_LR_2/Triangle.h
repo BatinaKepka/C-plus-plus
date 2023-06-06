@@ -13,7 +13,7 @@ public:
 
 	void Input();
 
-	void Display();
+	friend void operator << (ostream& o, Triangle triangle);
 
 	float Perimeter();
 

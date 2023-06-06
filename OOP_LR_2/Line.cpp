@@ -21,14 +21,6 @@ void Line::Input()
 	this->second.Input();
 }
 
-void Line::Display()
-{
-	cout << endl << "Первая точка:";
-	this->first.Display();
-	cout << endl << "Вторая точка:";
-	this->second.Display();
-}
-
 bool Line::Point_on_line(Point point)
 {
 	float x, y, z;	
@@ -110,15 +102,6 @@ void Line_segment::Input()
 {
 	Line::Input();
 	length = first.Distance_to_Point(second);
-}
-
-void Line_segment::Display()
-{
-	cout << endl << "Первая точка:";
-	this->first.Display();
-	cout << endl << "Вторая точка:";
-	this->second.Display();
-	cout << endl << "Длинна отрезка: " << length;
 }
 
 float Line_segment::Get_length()

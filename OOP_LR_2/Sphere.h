@@ -13,7 +13,7 @@ public:
 
 	void Input();
 
-	void Display();
+	friend void operator << (ostream& o, Sphere sphere);
 
 	bool Point_on_Sphere(Point point);
 

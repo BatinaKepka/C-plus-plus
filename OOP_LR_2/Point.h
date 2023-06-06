@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+using namespace std;
+
 class Point
 {
 private:
@@ -9,9 +12,7 @@ public:
 
 	Point(float x, float y, float z);
 
-	void Input();
-
-	void Display();
+	void Input();	
 
 	float Distance_to_Point(Point end);
 
@@ -25,11 +26,15 @@ public:
 
 	friend void ValuePointX2(Point& point);
 
+	friend void operator << (ostream& o, Point point);
+
 	Point operator + (Point b);
 
 	Point& operator ++();
 
 	Point operator ++(int unused);	
+
+	
 };
 
 

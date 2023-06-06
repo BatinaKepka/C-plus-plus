@@ -13,7 +13,7 @@ public:
 
 	void Input();
 
-	void Display();
+	friend void operator << (ostream& o, Plane plane);
 
 	bool Point_on_plane(Point point);
 

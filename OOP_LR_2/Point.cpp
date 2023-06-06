@@ -33,11 +33,6 @@ void Point::Input()
 
 }
 
-void Point::Display()
-{
-	cout << endl << "x = " << this->x << " y = " << this->y <<" z = " << this->z;
-}
-
 float Point::Distance_to_Point(Point end)
 {
 	return sqrt(pow((end.x - this->x), 2) + pow((end.y - this->y), 2) + pow((end.z - this->z), 2));

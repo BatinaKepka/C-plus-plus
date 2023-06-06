@@ -1,5 +1,7 @@
 #pragma once
 #include "Point.h"
+#include <iostream>
+using namespace std;
 
 class Line
 {
@@ -11,15 +13,15 @@ public:
 
 	Line(Point first, Point second);
 
-	void Input();
-
-	void Display();
+	void Input();	
 
 	bool Point_on_line(Point point);
 
 	Point Get_first_point();
 
 	Point Get_second_point();
+
+	friend void operator << (ostream& o, Line line);
 
 	static int getCount()
 	{
@@ -37,13 +39,13 @@ public:
 
 	Line_segment(Point first, Point second);
 
-	void Input();
-
-	void Display();
+	void Input();	
 
 	float Get_length();
 
 	Line_segment operator=(Line line);
+
+	friend void operator << (ostream& o, Line_segment line_segment);
 
 };
 

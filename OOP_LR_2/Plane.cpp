@@ -21,16 +21,6 @@ void Plane::Input()
 	third.Input();
 }
 
-void Plane::Display()
-{
-	cout << endl << "Первая точка:";
-	first.Display();
-	cout << endl << "Первая точка:";
-	second.Display();
-	cout << endl << "Первая точка:";
-	third.Display();
-}
-
 bool Plane::Point_on_plane(Point point)
 {
 	float x = (point.getX() - first.getX()) * ((second.getY() - first.getY()) * (third.getZ() - first.getZ()) - (second.getZ() - first.getZ()) * (third.getY() - first.getY()));

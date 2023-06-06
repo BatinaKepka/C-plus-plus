@@ -21,16 +21,6 @@ void Triangle::Input()
 	third.Input();
 }
 
-void Triangle::Display()
-{
-	cout << endl << "Первая точка:";
-	first.Display();
-	cout << endl << "Вторая точка:";
-	second.Display();
-	cout << endl << "Третья точка:";
-	third.Display();
-}
-
 float Triangle::Perimeter()
 {
 	return first.Distance_to_Point(second) + first.Distance_to_Point(third) + second.Distance_to_Point(third);
