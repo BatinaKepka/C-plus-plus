@@ -80,8 +80,6 @@ bool Line::Point_on_line(Point point)
 	}
 	
 }
-	
-
 
 Point Line::Get_first_point() 
 {
@@ -94,10 +92,46 @@ Point Line::Get_second_point()
 }
 Line::~Line()
 {
-	Count--;
-	cout << "\nЛиния удалена!";
+	Count--;	
 }
 
+Line_segment::Line_segment()
+{
+	
+}
 
+Line_segment::Line_segment(Point first, Point second)
+{
+	Line::Line(first, second);
+	length = first.Distance_to_Point(second);
+}
+
+void Line_segment::Input()
+{
+	Line::Input();
+	length = first.Distance_to_Point(second);
+}
+
+void Line_segment::Display()
+{
+	cout << endl << "Первая точка:";
+	this->first.Display();
+	cout << endl << "Вторая точка:";
+	this->second.Display();
+	cout << endl << "Длинна отрезка: " << length;
+}
+
+float Line_segment::Get_length()
+{
+	return length;
+}
+
+Line_segment Line_segment::operator=(Line line)
+{
+	this->first = line.Get_first_point();
+	this->second = line.Get_second_point();
+	length = line.Get_first_point().Distance_to_Point(line.Get_second_point());
+	return *this;
+}
 
 

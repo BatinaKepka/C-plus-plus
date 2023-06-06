@@ -3,7 +3,7 @@
 
 class Line
 {
-private:
+protected:
 	Point first, second;
 	static int Count;
 public:
@@ -26,5 +26,24 @@ public:
 		return Count;
 	}
 	~Line();
+};
+
+class Line_segment : public Line
+{
+private:
+	float length;
+public:
+	Line_segment();
+
+	Line_segment(Point first, Point second);
+
+	void Input();
+
+	void Display();
+
+	float Get_length();
+
+	Line_segment operator=(Line line);
+
 };
 
