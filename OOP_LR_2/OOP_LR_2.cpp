@@ -74,7 +74,7 @@ int main()
     a = b;
     cout << endl << "Отрезок после оператора '=' :";
     a.Display();
-    */
+   
     Point point;
     cout << "Точка:" << endl;
     point.Input();
@@ -95,7 +95,17 @@ int main()
     cout << endl << "Сфера:" << endl;
     sphere.Input();
     cout << "Вывод через cout:" << sphere;
-  
+   */
+    Line line;
+    Line_segment line_segment;
+    Line* x;
+    x = &line;
+    cout << "Введите точки прямой: \n";
+    x->Input();   
+    x = &line_segment;
+    cout << "Введите точки отрезка: \n";
+    x->Input();   
+
 }
 
 

@@ -13,7 +13,7 @@ public:
 
 	Line(Point first, Point second);
 
-	void Input();	
+	virtual void Input();	
 
 	bool Point_on_line(Point point);
 
@@ -39,7 +39,7 @@ public:
 
 	Line_segment(Point first, Point second);
 
-	void Input();	
+	void Input() override;	
 
 	float Get_length();
 

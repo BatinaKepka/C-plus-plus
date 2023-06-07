@@ -14,7 +14,7 @@ Line::Line(Point first, Point second)
 	Count++;
 }
 
-void Line::Input() 
+void Line::Input()
 {
 
 	this->first.Input();
@@ -102,6 +102,7 @@ void Line_segment::Input()
 {
 	Line::Input();
 	length = first.Distance_to_Point(second);
+	cout << "Длинна: " << length;
 }
 
 float Line_segment::Get_length()
