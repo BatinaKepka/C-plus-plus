@@ -5,9 +5,24 @@
 #include "Triangle.h"
 #include "Plane.h"
 #include "Sphere.h"
-
-
 using namespace std;
+
+template<typename T>
+class occupied_memory_space
+{
+public:
+    occupied_memory_space(T value)
+    {
+        this->value = value;
+    }
+    void DataTypeSize()
+    {
+        cout << "Занимаемое место в памяти: " << sizeof(value) << endl;
+    }
+private:
+    T value;
+};
+
 
 int Line::Count = 0;
 
@@ -49,7 +64,7 @@ void operator << (ostream& o, Triangle triangle)
 
 void operator << (ostream& o, Plane plane)
 {
-    cout << "Название треугольника: " << plane.Name;
+    cout << "Название плоскости: " << plane.Name;
     cout << endl << "Первая точка:" << plane.first;
     cout << "Вторая точка:" << plane.second;
     cout << "Длинна отрезка: " << plane.third;
@@ -110,7 +125,7 @@ int main()
     x = &line_segment;
     cout << "Введите точки отрезка: \n";
     x->Input();   
-    */
+    
 
     Point point;
     Line line;
@@ -133,6 +148,11 @@ int main()
     cout << endl << triangle;
     cout << endl << plane;
     cout << endl << sphere;
+    */
+    Point point;
+    occupied_memory_space<Point> test(point);
+    test.DataTypeSize();
+
 
 }
 
