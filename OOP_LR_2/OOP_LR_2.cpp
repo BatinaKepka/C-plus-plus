@@ -20,41 +20,46 @@ void ValuePointX2(Point& point)
 
 void operator << (ostream& o, Point point)
 {
-    cout << endl << "x = " << point.x << " y = " << point.y << " z = " << point.z;
+    cout << endl << "Точка - " << point.Name << ", координыты: " << "x = " << point.x << " y = " << point.y << " z = " << point.z << endl;
 }
 
 void operator << (ostream& o, Line line)
 {
+    cout << "Название прямой: " << line.Name;
     cout << endl << "Первая точка:" << line.first;
-    cout << endl << "Вторая точка:" << line.second;
+    cout << "Вторая точка:" << line.second;
 }
 
 void operator << (ostream& o, Line_segment line_segment)
 {
+    cout << "Название отрезка: " << line_segment.Name;
     cout << endl << "Первая точка:" << line_segment.first;
-    cout << endl << "Вторая точка:" << line_segment.second;
-    cout << endl << "Длинна отрезка: " << line_segment.length;
+    cout << "Вторая точка:" << line_segment.second;
+    cout << "Длинна отрезка: " << line_segment.length;
 }
 
 void operator << (ostream& o, Triangle triangle)
 {
+    cout << "Название треугольника: " << triangle.Name;
     cout << endl << "Первая точка:" << triangle.first;   
-    cout << endl << "Вторая точка:" << triangle.second;
-    cout << endl << "Третья точка:" << triangle.third;
+    cout << "Вторая точка:" << triangle.second;
+    cout << "Третья точка:" << triangle.third;
     
 }
 
 void operator << (ostream& o, Plane plane)
 {
+    cout << "Название треугольника: " << plane.Name;
     cout << endl << "Первая точка:" << plane.first;
-    cout << endl << "Вторая точка:" << plane.second;
-    cout << endl << "Длинна отрезка: " << plane.third;
+    cout << "Вторая точка:" << plane.second;
+    cout << "Длинна отрезка: " << plane.third;
 }
 
 void operator << (ostream& o, Sphere sphere)
 {
-    cout << endl << "Центр сферы:" << sphere.centre;    
-    cout << endl << "Радиус сферы:" << sphere.radius;
+    cout << "Название сферы: " << sphere.Name << endl;
+    cout << "Центр сферы:" << sphere.centre;    
+    cout << "Радиус сферы:" << sphere.radius;
 }
 
 int main()
@@ -95,7 +100,7 @@ int main()
     cout << endl << "Сфера:" << endl;
     sphere.Input();
     cout << "Вывод через cout:" << sphere;
-   */
+   
     Line line;
     Line_segment line_segment;
     Line* x;
@@ -105,6 +110,29 @@ int main()
     x = &line_segment;
     cout << "Введите точки отрезка: \n";
     x->Input();   
+    */
+
+    Point point;
+    Line line;
+    Triangle triangle;
+    Plane plane;
+    Sphere sphere; 
+    cout << "Введите точку:" << endl;
+    point.Input();
+    cout << "Введите линию:" << endl;
+    line.Input();
+    cout << "Введите треугольник: " << endl;
+    triangle.Input();
+    cout << "Введите плоскость: " << endl;
+    plane.Input();
+    cout << "Введите сферу: " << endl;
+    sphere.Input();
+
+    cout << point;
+    cout << endl << line;
+    cout << endl << triangle;
+    cout << endl << plane;
+    cout << endl << sphere;
 
 }
 

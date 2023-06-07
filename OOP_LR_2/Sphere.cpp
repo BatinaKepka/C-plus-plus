@@ -3,12 +3,12 @@
 #include <iostream>
 using namespace std;
 
-Sphere::Sphere()
+Sphere::Sphere() : Object_in_space()
 {
 
 }
 
-Sphere::Sphere(Point centre, float radius)
+Sphere::Sphere(Point centre, float radius, string name) : Object_in_space(name)
 {
 	this->centre = centre;
 	this->radius = radius;
@@ -18,6 +18,7 @@ void Sphere::Input()
 {	
 	centre.Input();
 	cin >> radius;	
+	this->Name = centre.getName();
 }
 
 bool Sphere::Point_on_Sphere(Point point)

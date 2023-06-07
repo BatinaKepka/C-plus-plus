@@ -1,7 +1,7 @@
 #pragma once
 #include "Point.h"
 
-class Triangle
+class Triangle : public Object_in_space
 {
 private:
 	Point first, second, third;
@@ -9,7 +9,7 @@ public:
 
 	Triangle();
 
-	Triangle(Point first, Point second, Point third);
+	Triangle(Point first, Point second, Point third, string name);
 
 	void Input();
 

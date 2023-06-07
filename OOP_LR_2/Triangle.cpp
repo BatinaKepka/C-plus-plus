@@ -2,16 +2,16 @@
 #include <iostream>
 using namespace std;
 
-Triangle::Triangle()
+Triangle::Triangle() :Object_in_space()
 {
-
+	
 }
 
-Triangle::Triangle(Point first, Point second, Point third)
+Triangle::Triangle(Point first, Point second, Point third, string name) :Object_in_space(name)
 {
 	this->first = first;
 	this->second = second;
-	this->third = third;
+	this->third = third;	
 }
 
 void Triangle::Input()
@@ -19,6 +19,7 @@ void Triangle::Input()
 	first.Input();
 	second.Input();
 	third.Input();
+	Name = first.getName() + "-" + second.getName() + "-" + third.getName();
 }
 
 float Triangle::Perimeter()

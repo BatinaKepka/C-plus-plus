@@ -1,7 +1,7 @@
 #pragma once
 #include "Point.h"
 
-class Sphere
+class Sphere : public Object_in_space
 {
 private:
 	Point centre;
@@ -9,7 +9,7 @@ private:
 public:
 	Sphere();
 
-	Sphere(Point centre, float radius);
+	Sphere(Point centre, float radius, string name);
 
 	void Input();
 

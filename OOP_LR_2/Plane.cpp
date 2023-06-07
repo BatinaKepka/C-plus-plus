@@ -2,12 +2,12 @@
 #include <iostream>
 using namespace std;
 
-Plane::Plane() 
+Plane::Plane():Object_in_space()
 {
 
 }
 
-Plane::Plane(Point first, Point second, Point third)
+Plane::Plane(Point first, Point second, Point third, string name) : Object_in_space(name)
 {
 	this->first = first;
 	this->second = second;
@@ -19,6 +19,7 @@ void Plane::Input()
 	first.Input();
 	second.Input();
 	third.Input();
+	Name = first.getName()+ "-" + second.getName() + "-" + third.getName();
 }
 
 bool Plane::Point_on_plane(Point point)

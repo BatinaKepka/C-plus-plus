@@ -1,7 +1,7 @@
 #pragma once
 #include "Point.h"
 
-class Plane
+class Plane : public Object_in_space
 {
 private:
 	Point first, second, third;
@@ -9,7 +9,7 @@ public:
 
 	Plane();
 
-	Plane(Point first, Point second, Point third);
+	Plane(Point first, Point second, Point third, string name);
 
 	void Input();
 

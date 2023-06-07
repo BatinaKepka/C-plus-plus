@@ -2,15 +2,15 @@
 #include <iostream>
 using namespace std;
 
-Line::Line()
+Line::Line():Object_in_space()
 {
 	Count++;
 }
 
-Line::Line(Point first, Point second)
+Line::Line(Point first, Point second, string name):Object_in_space(name)
 {
 	this->first = first;
-	this->second = second;
+	this->second = second;	
 	Count++;
 }
 
@@ -19,6 +19,7 @@ void Line::Input()
 
 	this->first.Input();
 	this->second.Input();
+	this->Name = first.getName()+ "-" + second.getName();
 }
 
 bool Line::Point_on_line(Point point)
@@ -87,14 +88,14 @@ Line::~Line()
 	Count--;	
 }
 
-Line_segment::Line_segment()
+Line_segment::Line_segment():Line()
 {
 	
 }
 
-Line_segment::Line_segment(Point first, Point second)
+Line_segment::Line_segment(Point first, Point second, string name)
 {
-	Line::Line(first, second);
+	Line::Line(first, second, name);
 	length = first.Distance_to_Point(second);
 }
 

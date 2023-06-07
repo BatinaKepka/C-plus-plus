@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class Line
+class Line : public Object_in_space
 {
 protected:
 	Point first, second;
@@ -11,7 +11,7 @@ protected:
 public:
 	Line();
 
-	Line(Point first, Point second);
+	Line(Point first, Point second, string name);
 
 	virtual void Input();	
 
@@ -19,7 +19,7 @@ public:
 
 	Point Get_first_point();
 
-	Point Get_second_point();
+	Point Get_second_point();	
 
 	friend void operator << (ostream& o, Line line);
 
@@ -37,7 +37,7 @@ private:
 public:
 	Line_segment();
 
-	Line_segment(Point first, Point second);
+	Line_segment(Point first, Point second, string name);
 
 	void Input() override;	
 
