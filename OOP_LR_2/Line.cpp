@@ -22,6 +22,15 @@ void Line::Input()
 	this->Name = first.getName()+ "-" + second.getName();
 }
 
+void Line::Display()
+{
+	cout << "Название прямой: " << Name;
+	cout << endl << "Первая точка:";
+	first.Display();
+	cout << "Вторая точка:" ;
+	second.Display();
+}
+
 bool Line::Point_on_line(Point point)
 {
 	float x, y, z;	
@@ -103,7 +112,16 @@ void Line_segment::Input()
 {
 	Line::Input();
 	length = first.Distance_to_Point(second);
-	cout << "Длинна: " << length;
+	cout << "Длинна: " << length << endl;
+}
+void Line_segment::Display()
+{
+	cout << "Название прямой: " << Name;
+	cout << endl << "Первая точка:";
+	first.Display();
+	cout << "Вторая точка:";
+	second.Display();
+	cout << "Длинна отрезка: " << length <<endl;
 }
 
 float Line_segment::Get_length()
@@ -118,5 +136,7 @@ Line_segment Line_segment::operator=(Line line)
 	length = line.Get_first_point().Distance_to_Point(line.Get_second_point());
 	return *this;
 }
+
+
 
 

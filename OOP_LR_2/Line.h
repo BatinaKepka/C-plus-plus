@@ -23,6 +23,8 @@ public:
 
 	friend void operator << (ostream& o, Line line);
 
+	virtual void Display();	
+
 	static int getCount()
 	{
 		return Count;
@@ -41,7 +43,9 @@ public:
 
 	void Input() override;	
 
-	float Get_length();
+	void Display() override;
+
+	float Get_length();	
 
 	Line_segment operator=(Line line);
 

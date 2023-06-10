@@ -5,6 +5,9 @@
 #include "Triangle.h"
 #include "Plane.h"
 #include "Sphere.h"
+
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 template<typename T>
@@ -77,83 +80,84 @@ void operator << (ostream& o, Sphere sphere)
     cout << "Радиус сферы:" << sphere.radius;
 }
 
+bool con(Point p1, Point p2)
+{
+    Point zero(0, 0, 0, "");
+    if (p1.Distance_to_Point(zero) < p2.Distance_to_Point(zero))
+        return true;
+    else
+        return false;
+}
+
+bool first_octant(Point p)
+{
+    if ((p.x > 0) && (p.y > 0) && (p.z > 0))
+        return true;
+    else
+        return false;
+}
+
 int main()
 {
     
     setlocale(LC_ALL, "Rus"); 
-    /*Line_segment a;
-    cout << "Введите точки отрезка:" << endl;
-    a.Input();
-    cout << "Отрезок:";
-    a.Display();
-    Line b;
-    cout << endl << "Введите точки прямой:" << endl;
-    b.Input();
-    cout << "Прямая:";
-    b.Display();
-    a = b;
-    cout << endl << "Отрезок после оператора '=' :";
-    a.Display();
-   
-    Point point;
-    cout << "Точка:" << endl;
-    point.Input();
-    cout << "Вывод через cout:" << point;
-    Line line;
-    cout << endl <<"Прямая:" << endl;
-    line.Input();
-    cout << "Вывод через cout:" << line;
-    Triangle triangle;
-    cout << endl  << "Треугольник:" << endl;
-    triangle.Input();
-    cout << "Вывод через cout:" << triangle;
-    Plane plane; 
-    cout << endl << "Плоскость:" << endl;
-    plane.Input();
-    cout << "Вывод через cout:" << plane;
-    Sphere sphere;
-    cout << endl << "Сфера:" << endl;
-    sphere.Input();
-    cout << "Вывод через cout:" << sphere;
-   
-    Line line;
-    Line_segment line_segment;
-    Line* x;
-    x = &line;
-    cout << "Введите точки прямой: \n";
-    x->Input();   
-    x = &line_segment;
-    cout << "Введите точки отрезка: \n";
-    x->Input();   
+
+
+    /*vector<Line*> v;
+    vector<Line*>::iterator  iL;
+
+    Line* line;
+    Line_segment* line_segment;
+    line = new Line();
+    line_segment = new Line_segment();
+
+    v.push_back(line);
+    v.push_back(line_segment);
+
+    line = new Line();
+    line_segment = new Line_segment();
+
+    v.push_back(line);
+    v.push_back(line_segment);
+
+    for (iL = v.begin(); iL != v.end(); ++iL)
+    {
+        (*iL)->Input();
+        (*iL)->Display();
+    }
     
-
-    Point point;
-    Line line;
-    Triangle triangle;
-    Plane plane;
-    Sphere sphere; 
-    cout << "Введите точку:" << endl;
-    point.Input();
-    cout << "Введите линию:" << endl;
-    line.Input();
-    cout << "Введите треугольник: " << endl;
-    triangle.Input();
-    cout << "Введите плоскость: " << endl;
-    plane.Input();
-    cout << "Введите сферу: " << endl;
-    sphere.Input();
-
-    cout << point;
-    cout << endl << line;
-    cout << endl << triangle;
-    cout << endl << plane;
-    cout << endl << sphere;
     */
-    Point point;
-    occupied_memory_space<Point> test(point);
-    test.DataTypeSize();
+    vector<Point> v;
+    vector<Point>::iterator  iP;
+    v.clear();
+    Point A( -1, 1, 1, "A"), B(10, 10, -10, "B"), C(50, 50, 50, "C"), D(100, -100, 100, "D");
+    v.push_back(A);
+    v.push_back(D);
+    v.push_back(C);
+    v.push_back(B);
+    cout << "Вектор до сортировки\n";
+    for (iP = v.begin(); iP != v.end(); ++iP)
+    {
+        iP->Display();
+    }
+    sort(v.begin(), v.end(), con);
 
+    cout << "\nВектор после сортировки\n";
+    for (iP = v.begin(); iP != v.end(); ++iP)
+    {
+        iP->Display();
+    }
 
+    iP = find_if(v.begin(), v.end(), first_octant);
+    if (iP != v.end())     
+    {
+        cout << "Точка из первого октанта";
+        iP->Display();
+    }       
+    else
+        cout << "Нет точек в первом октанте";
+
+    
 }
 
 

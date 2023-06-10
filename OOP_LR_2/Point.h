@@ -25,6 +25,8 @@ public:
 
 	void Input();	
 
+	void Display();
+
 	float Distance_to_Point(Point end);
 
 	float getX();
@@ -44,6 +46,10 @@ public:
 	Point& operator ++();
 
 	Point operator ++(int unused);	
+
+	friend bool con(Point p1, Point p2);
+
+	friend bool first_octant(Point p);
 
 	
 };
